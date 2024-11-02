@@ -39,8 +39,10 @@ class Apple(GameObject):
     """Класс для яблока."""
 
     def __init__(self):
-        super().__init__(position=self.randomize_position(),
-                         body_color=APPLE_COLOR)
+        super().__init__(
+            position=self.randomize_position(),
+            body_color=APPLE_COLOR
+        )
 
     def randomize_position(self):
         """Случайно выбирает новую позицию для яблока."""
@@ -59,8 +61,10 @@ class Snake(GameObject):
     """Класс для змейки."""
 
     def __init__(self):
-        super().__init__(position=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2),
-                         body_color=SNAKE_COLOR)
+        super().__init__(
+            position=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2),
+            body_color=SNAKE_COLOR
+        )
         self.length = 1
         self.positions = [self.position]
         self.direction = RIGHT
