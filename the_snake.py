@@ -39,8 +39,10 @@ class Apple(GameObject):
     """Класс для яблока."""
 
     def __init__(self):
-        super().__init__(position=self.randomize_position(),
-                         body_color=APPLE_COLOR)
+        super().__init__(
+    position=self.randomize_position(),
+    body_color=APPLE_COLOR
+)
 
     def randomize_position(self):
         """Случайно выбирает новую позицию для яблока."""
@@ -75,8 +77,10 @@ class Snake(GameObject):
     def move(self):
         """Перемещает змейку в текущем направлении."""
         head_x, head_y = self.positions[0]
-        new_head = (head_x + self.direction[0] * GRID_SIZE,
-                    head_y + self.direction[1] * GRID_SIZE)
+        new_head = (
+    head_x + self.direction[0] * GRID_SIZE,
+    head_y + self.direction[1] * GRID_SIZE
+)
 
         # Проверка выхода за границы экрана и перенос на противоположную сторону
         new_head = (
