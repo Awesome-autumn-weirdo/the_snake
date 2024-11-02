@@ -25,7 +25,7 @@ SPEED = 20
 
 class GameObject:
     """Класс для игровых объектов."""
-    
+
     def __init__(self, position=(0, 0), body_color=(0, 0, 0)):
         self.position = position
         self.body_color = body_color
@@ -37,7 +37,7 @@ class GameObject:
 
 class Apple(GameObject):
     """Класс для яблока."""
-    
+
     def __init__(self):
         super().__init__(position=self.randomize_position(), body_color=APPLE_COLOR)
 
@@ -56,9 +56,9 @@ class Apple(GameObject):
 
 class Snake(GameObject):
     """Класс для змейки."""
-    
+
     def __init__(self):
-        super().__init__(position=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2), 
+        super().__init__(position=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2),
                          body_color=SNAKE_COLOR)
         self.length = 1
         self.positions = [self.position]
@@ -74,7 +74,7 @@ class Snake(GameObject):
     def move(self):
         """Перемещает змейку в текущем направлении."""
         head_x, head_y = self.positions[0]
-        new_head = (head_x + self.direction[0] * GRID_SIZE, 
+        new_head = (head_x + self.direction[0] * GRID_SIZE,
                     head_y + self.direction[1] * GRID_SIZE)
 
         # Проверка выхода за границы экрана и перенос на противоположную сторону
@@ -88,7 +88,7 @@ class Snake(GameObject):
 
         # Проверяем, нужно ли увеличить длину змейки или удалить последний сегмент
         if len(self.positions) > self.length:
-            self.last = self.positions.pop()
+            self.positions.pop()
 
     def draw(self, surface):
         """Отрисовывает змейку на экране."""
