@@ -76,13 +76,13 @@ class Snake(GameObject):
         return self.positions[0]
 
     def update_direction(self):
-        """Обновляет направление движения змейки."""
+        """Обновляет направление движения."""
         if self.next_direction:
             self.direction = self.next_direction
             self.next_direction = None
 
     def move(self):
-        """Перемещает змейку в текущем направлении."""
+        """Перемещает змейку в направлении."""
         head_x, head_y = self.get_head_position()
         dir_x, dir_y = self.direction
         new_position = ((head_x + dir_x * GRID_SIZE) % SCREEN_WIDTH,
@@ -118,7 +118,7 @@ class Snake(GameObject):
 
 # Функция обработки событий клавиш
 def handle_keys(snake):
-    """Обрабатывает нажатия клавиш для управления змейкой."""
+    """Обрабатывает нажатия клавиш."""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
