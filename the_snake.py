@@ -22,6 +22,10 @@ SNAKE_COLOR = (0, 255, 0)
 # Скорость движения змейки
 SPEED = 20
 
+# Определение глобальных переменных screen и clock
+screen = None
+clock = None
+
 
 class GameObject:
     """Класс для игровых объектов."""
@@ -131,6 +135,7 @@ def handle_keys(snake):
 
 def main():
     """Главная функция игры."""
+    global screen, clock
     # Инициализация Pygame
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
