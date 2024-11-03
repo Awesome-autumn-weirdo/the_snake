@@ -55,8 +55,10 @@ class Apple(GameObject):
 
     def randomize_position(self):
         """Случайно выбирает новую позицию."""
-        self.position = (randint(0, GRID_WIDTH - 1) * GRID_SIZE,
-                         randint(0, GRID_HEIGHT - 1) * GRID_SIZE)
+        self.position = (
+            randint(0, GRID_WIDTH - 1) * GRID_SIZE,
+            randint(0, GRID_HEIGHT - 1) * GRID_SIZE
+        )
 
 
 # Класс змейки
@@ -85,9 +87,10 @@ class Snake(GameObject):
         """Перемещает змейку в направлении."""
         head_x, head_y = self.get_head_position()
         dir_x, dir_y = self.direction
-        new_position = ((head_x + dir_x * GRID_SIZE) % SCREEN_WIDTH,
-        (head_y + dir_y * GRID_SIZE) % SCREEN_HEIGHT)
-
+        new_position = (
+            (head_x + dir_x * GRID_SIZE) % SCREEN_WIDTH,
+            (head_y + dir_y * GRID_SIZE) % SCREEN_HEIGHT
+        )
 
         if new_position in self.positions[2:]:
             self.reset()
