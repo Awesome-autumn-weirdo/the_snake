@@ -19,10 +19,10 @@ BORDER_COLOR = (93, 216, 228)
 APPLE_COLOR = (255, 0, 0)
 SNAKE_COLOR = (0, 255, 0)
 
-# Скорость движения змейки
+# Скорость игры
 SPEED = 20
 
-# Определение глобальных переменных screen и clock
+# Глобальные переменные для экрана и времени
 screen = None
 clock = None
 
@@ -141,6 +141,10 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Snake Game")
     clock = pygame.time.Clock()
+
+    # Проверка типов screen и clock
+    assert isinstance(screen, pygame.Surface), "Переменная screen должна быть объектом pygame.Surface"
+    assert isinstance(clock, pygame.time.Clock), "Переменная clock должна быть объектом pygame.time.Clock"
 
     # Создание объектов
     snake = Snake()
