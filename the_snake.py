@@ -80,8 +80,8 @@ class Snake(GameObject):
         """Перемещает змейку в направлении."""
         head_x, head_y = self.positions[0]
         new_head = (
-            head_x+self.direction[0]*GRID_SIZE,
-            head_y+self.direction[1]*GRID_SIZE
+            head_x + self.direction[0] * GRID_SIZE,
+            head_y + self.direction[1] * GRID_SIZE
         )
 
         # Проверка выхода за границы экрана
