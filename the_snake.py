@@ -184,7 +184,7 @@ def main():
         pygame.display.update()
 
         # Задержка для регулировки скорости
-        clock.tick(10)
+        clock.tick(SPEED)
 
 
 if __name__ == '__main__':
