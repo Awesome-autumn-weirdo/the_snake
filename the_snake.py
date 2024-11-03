@@ -143,8 +143,8 @@ def main():
     clock = pygame.time.Clock()
 
     # Проверка типов screen и clock
-    assert isinstance(screen, pygame.Surface), "Переменная screen должна быть объектом pygame.Surface"
-    assert isinstance(clock, pygame.time.Clock), "Переменная clock должна быть объектом pygame.time.Clock"
+    assert isinstance(screen, pygame.Surface),
+    assert isinstance(clock, pygame.time.Clock),
 
     # Создание объектов
     snake = Snake()
