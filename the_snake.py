@@ -34,9 +34,10 @@ clock = pygame.time.Clock()
 class GameObject:
     """Класс для игровых объектов."""
 
-    def __init__(self, position, color):
+    def __init__(self, position=(0, 0), color=(255, 255, 255)):
         self.position = position
         self.color = color
+        self.body_color = color  # Добавляем атрибут body_color
 
     def draw(self):
         """Отрисовка объекта на экране."""
@@ -66,11 +67,11 @@ class Snake(GameObject):
     """Класс для змейки."""
 
     def __init__(self):
+        super().__init__((SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2), SNAKE_COLOR)
         self.length = 1
-        self.positions = [(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2)]
+        self.positions = [self.position]
         self.direction = RIGHT
         self.next_direction = None
-        self.color = SNAKE_COLOR
         self.last = None
 
     def get_head_position(self):
