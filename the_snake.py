@@ -54,7 +54,7 @@ class Apple(GameObject):
         self.randomize_position()
 
     def randomize_position(self):
-        """Случайно выбирает новую позицию для яблока."""
+        """Случайно выбирает новую позицию."""
         self.position = (randint(0, GRID_WIDTH - 1) * GRID_SIZE,
                          randint(0, GRID_HEIGHT - 1) * GRID_SIZE)
 
@@ -86,7 +86,7 @@ class Snake(GameObject):
         head_x, head_y = self.get_head_position()
         dir_x, dir_y = self.direction
         new_position = ((head_x + dir_x * GRID_SIZE) % SCREEN_WIDTH,
-                (head_y + dir_y * GRID_SIZE) % SCREEN_HEIGHT)
+        (head_y + dir_y * GRID_SIZE) % SCREEN_HEIGHT)
 
 
         if new_position in self.positions[2:]:
