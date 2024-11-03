@@ -77,14 +77,14 @@ class Snake(GameObject):
             self.next_direction = None
 
     def move(self):
-        """Перемещает змейку в текущем направлении."""
+        """Перемещает змейку в направлении."""
         head_x, head_y = self.positions[0]
         new_head = (
-            head_x + self.direction[0] * GRID_SIZE,
-            head_y + self.direction[1] * GRID_SIZE
+            head_x+self.direction[0]*GRID_SIZE,
+            head_y+self.direction[1]*GRID_SIZE
         )
 
-        # Проверка выхода за границы экрана и перенос на противоположную сторону
+        # Проверка выхода за границы экрана
         new_head = (
             new_head[0] % SCREEN_WIDTH,
             new_head[1] % SCREEN_HEIGHT
@@ -93,7 +93,7 @@ class Snake(GameObject):
         # Добавляем новую позицию головы
         self.positions.insert(0, new_head)
 
-        # Проверяем, нужно ли увеличить длину змейки или удалить последний сегмент
+        # Проверяем, нужно ли увеличить длину
         if len(self.positions) > self.length:
             self.positions.pop()
 
